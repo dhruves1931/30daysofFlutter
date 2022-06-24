@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp1/widgets/drawer.dart';
 
 class Homepage extends StatelessWidget {
   @override
@@ -15,7 +16,7 @@ class Homepage extends StatelessWidget {
         ),
       ),
       backgroundColor: CupertinoColors.lightBackgroundGray,
-      drawer: Drawer(),
+      drawer: Mydrawer(),
     );
   }
 }
