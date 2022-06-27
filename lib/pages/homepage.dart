@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp1/models/catalog.dart';
 import 'package:myapp1/widgets/drawer.dart';
+import '../widgets/itemwidget.dart';
 
 class Homepage extends StatelessWidget {
   @override
@@ -8,14 +10,19 @@ class Homepage extends StatelessWidget {
     var name = "Dhruve";
     return Scaffold(
       appBar: AppBar(
-        title: Text("ELECTRONIC CALCULATOR"),
+        title: Text("ELECTRIC SHOPPY"),
       ),
-      body: Center(
-        child: Container(
-          child: Text('Welcome $name, My First App'),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: catalogmodel.items.length,
+          itemBuilder: (context, index) {
+            return itemwidget(
+              item: catalogmodel.items[index],
+            );
+          },
         ),
       ),
-      backgroundColor: CupertinoColors.lightBackgroundGray,
       drawer: Mydrawer(),
     );
   }
